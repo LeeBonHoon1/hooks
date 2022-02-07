@@ -4,9 +4,9 @@ import {useQuery} from 'react-query'
 const TestQuery = () => {
 
     const { isLoading, error, data } = useQuery('movieList', () =>
-    fetch("https://yts.mx/api/v2/list_movies.json?with_images=true").then(res =>
-      res.json()
-    )
+     fetch("https://yts.mx/api/v2/list_movies.json?with_images=true")
+        .then(res =>
+            res.json())
     );
 
     if (isLoading) return "Loading...";
@@ -17,9 +17,9 @@ const TestQuery = () => {
     <div>
         <ul>
             {
-                data.data.movies.map((item) => {
+                data.data.movies.map((item, index) => {
                     return (
-                        <li>
+                        <li key={index}>
                             <h1>{item.title}</h1>
                             <ul>
                                 <li>{item.genres}</li>

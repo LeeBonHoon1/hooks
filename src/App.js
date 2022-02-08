@@ -7,7 +7,9 @@ import TestUseMemo from './components/TestUseMemo';
 import TestUseRef from './components/TestUseRef';
 import TestUseRefInput from './components/TestUseRefInput'
 import TestQuery from './page/TestQuery';
+import TestProps from './components/TestProps'
 import Main from './page/Main'
+import {useState} from 'react'
 
 function App() {
 
@@ -24,6 +26,7 @@ function App() {
         <Route path="/testuseref" component={TestUseRef} />
         <Route path="/testuserefinput" component={TestUseRefInput} />
         <Route path="/testquery" component={TestQuery} />
+        <Route path="/testprops" component={TestProps} />
       </Switch>
     </div>
   );
